@@ -1,12 +1,43 @@
 Spotify Personal Listening Intelligence System
 Overview
-An AI-powered behavioral music analytics system that analyzes Spotify listening history to:
+--An AI-powered behavioral music analytics system that analyzes Spotify listening history to:
 -Detect peak listening hours
 -Learn time-based genre preferences
 -Recommend artists dynamically
 -Build predictive ML models
 -Provide an interactive Streamlit dashboard
 -Visualize behavioral patterns in Tableau
+
+--Data Acquisition & Processing
+1️)Data Source
+The dataset was obtained from Spotify’s official data export tool:
+Requested extended streaming history from Spotify account
+Received JSON files containing:
+-Track metadata
+-Listening timestamps
+-Session data
+-Device/platform usage
+-Play duration (ms_played)
+
+--2️)Data Cleaning
+Steps performed:
+-Removed entries with 0 minutes played
+-Converted ms_played → minutes_played
+-Converted timestamps to DateTime format
+-Extracted:
+-Hour
+-Time of Day (Morning/Afternoon/Night)
+-Removed sensitive fields (IP address)
+-Filtered null tracks and corrupted rows
+
+3️)Feature Engineering
+Created:
+-session_id using time gap threshold
+-gap_minutes between plays
+-new_session flag
+-Hourly genre mapping
+-Peak session hour detection
+-Master dataset: spotify_master_dataset.csv
 
 Features:
 1️)Tableau Behavioral Dashboard:
