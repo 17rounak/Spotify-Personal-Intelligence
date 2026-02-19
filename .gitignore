@@ -1,0 +1,7 @@
+spotify_master_dataset.csv
+*.json
+*.twbx
+.ipynb_checkpoints/
+__pycache__/
+*.pkl
+*.keras
