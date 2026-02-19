@@ -1,10 +1,8 @@
 Spotify Personal Listening Intelligence System
 Overview
---An AI-powered behavioral music analytics system that analyzes Spotify listening history to:
+--Time-aware behavioral music analytics system that analyzes Spotify listening history to:
 -Detect peak listening hours
--Learn time-based genre preferences
--Recommend artists dynamically
--Build predictive ML models
+-Learn time based genre preferences
 -Provide an interactive Streamlit dashboard
 -Visualize behavioral patterns in Tableau
 
@@ -39,6 +37,20 @@ Created:
 -Peak session hour detection
 -Master dataset: spotify_master_dataset.csv
 
+System Architecture:
+Spotify JSON Export
+        ↓
+Data Cleaning (Python)
+        ↓
+Feature Engineering
+        ↓
+Master Dataset
+        ↓
+1️)Tableau Behavioral Dashboard
+2️)Time-Aware Recommendation Logic
+3️)Streamlit Interactive App
+
+
 --Features:
 1️)Tableau Behavioral Dashboard:
 -Listening distribution by hour
@@ -47,29 +59,54 @@ Created:
 -Language segmentation
 -Session pattern analysis
 
-2️)Time-Aware Recommendation Engine
--Detects dominant genre per hour
--Suggests artists based on behavioral history
--Personalized Spotify redirect links
-
-3️)Machine Learning Models
--Genre classification model
--Peak listening hour model
--Session duration prediction
-
-4️)Streamlit AI App
+2)Streamlit  App
  Interactive dashboard with:
--Real-time hour detection
--Recommended artists
--Clickable Spotify links
+-Current hour detection
+-Peak listening hour insight
+-Time-based genre recommendation
+-Top artists for that hour
 -Most played songs per artist
+-Direct Spotify redirect links
 
  
 --Tech Stack:
+Data Processing:
 Python
 Pandas
-Scikit-learn
-XGBoost
-TensorFlow (LSTM)
-Streamlit
+NumPy
+
+Visualization:
 Tableau
+Streamlit
+
+Behavioral Logic:
+Time-based aggregation
+Session modeling
+Genre segmentation
+Hourly dominance mapping
+
+
+--Data Privacy Notice
+Due to privacy concerns, the full Spotify dataset is not included in this repository.
+To run locally:
+1)Request Spotify Extended Streaming History
+2)Run preprocessing script
+3)Generate spotify_master_dataset.csv
+4)Launch the Streamlit app
+
+No personal data is stored in this repository.
+
+--Future Improvements
+1)Future work includes:
+2)ML-based predictive modeling for next-genre prediction
+3)Session duration forecasting
+4)Time-aware probabilistic recommendation engine
+4)Deployment as a hosted web application
+5)Real-time Spotify API integration
+
+--Key Learnings
+1)Handling messy real-world JSON data
+2)Feature engineering for behavioral modeling
+3)Time-series segmentation
+4)Building reproducible analytics pipelines
+5)Designing user-facing data products
