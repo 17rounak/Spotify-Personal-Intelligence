@@ -39,7 +39,7 @@ Created:
 -Peak session hour detection
 -Master dataset: spotify_master_dataset.csv
 
-Features:
+--Features:
 1️)Tableau Behavioral Dashboard:
 -Listening distribution by hour
 -Artist × Time heatmaps
@@ -65,7 +65,7 @@ Features:
 -Most played songs per artist
 
  
-Tech Stack:
+--Tech Stack:
 Python
 Pandas
 Scikit-learn
